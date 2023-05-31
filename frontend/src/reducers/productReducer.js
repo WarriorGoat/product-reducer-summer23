@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export default function productReducer(product, action) {
   switch (action.type) {
     case "delete-product":
@@ -13,8 +15,15 @@ export default function productReducer(product, action) {
       return editedArray;
 
     case "add-product":
-        let addArray = product
-        return addArray
+      let newProduct = {
+        id: uuidv4(),
+        title: "",
+        publisher: "",
+        genre: "",
+        price: 0.0,
+      };
+      let addArray = [newProduct, ...product];
+      return addArray;
 
     default:
       alert("No matching types");

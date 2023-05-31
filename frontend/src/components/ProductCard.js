@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./ProductCard.css";
 
 const ProductCard = (props) => {
-  const [editBtn, setEditBtn] = useState(false);
+  const [editBtn, setEditBtn] = useState(props.title.length === 0 ? true : false);
   const [editProduct, setEditProduct] = useState({
     id: props.id,
     title: props.title,
@@ -30,6 +30,15 @@ const ProductCard = (props) => {
       </h2>
       {editBtn ? (
         <>
+        <p>
+            Title:{" "}
+            <input
+              type="text"
+              name="title"
+              value={editProduct.title}
+              onChange={onChangeHandler}
+            />{" "}
+          </p>
           <p>
             Publisher:{" "}
             <input
