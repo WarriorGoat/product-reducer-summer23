@@ -55,13 +55,15 @@ function App() {
   return (
     <div className="App">
       <h1>Video Game Products</h1>
+      <button>Add Product</button>
+
       {product.map((element) => {
         return (
           <ProductCard
             key={element.id}
             id={element.id}
             title={element.title}
-            publisher={element.title}
+            publisher={element.publisher}
             genre={element.genre}
             price={element.price}
             deleteProduct={() =>
@@ -73,7 +75,7 @@ function App() {
             editProduct = {
               (param)=> dispatch({
                 type: "edit-product",
-                id: element.id
+                editedObj: param
               })
             }
           />

@@ -11,6 +11,11 @@ export default function productReducer(product, action) {
         element.id === action.editedObj.id ? action.editedObj : element
       );
       return editedArray;
+
+    case "add-product":
+        let addArray = product
+        return addArray
+
     default:
       alert("No matching types");
       return product;
