@@ -3,10 +3,10 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('Base Route');
+  res.send('Base Product Page');
 });
 router.get('/new', function(req, res, next) {
-  res.send('New User Route');
+  res.send('New Products Page');
 });
 
 
